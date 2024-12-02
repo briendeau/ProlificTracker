@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Prolific Study Alert",
+  "version": "1.0",
+  "action": {
+    "default_popup": "hello.html",
+    "default_icon": "alert.png"
+  },
+  "description": "Alerts you with a beep when there's a new Prolific study.",
+  "permissions": ["tabs", "activeTab"],
+  "host_permissions": ["https://app.prolific.co/*"],
+  "content_scripts": [
+    {
+      "matches": ["https://app.prolific.co/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+}
